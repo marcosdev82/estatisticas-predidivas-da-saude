@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Sistema de Monitoramento de Saúde</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Monitoramento de Saúde</h1>
+        
+        <h2>Informações Demográficas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Idade</th>
+                    <th>Gênero</th>
+                    <th>Estado Civil</th>
+                    <th>Escolaridade</th>
+                    <th>Ocupação</th>
+                    <th>Renda Mensal Familiar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for info in data['informacoes'] %}
+                <tr>
+                    <td>{{ info[0] }}</td>
+                    <td>{{ info[1] }}</td>
+                    <td>{{ info[2] }}</td>
+                    <td>{{ info[3] }}</td>
+                    <td>{{ info[4] }}</td>
+                    <td>{{ info[5] }}</td>
+                    <td>{{ info[6] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Condições de Saúde</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Estado Geral de Saúde</th>
+                    <th>Hipertensão</th>
+                    <th>Diabetes</th>
+                    <th>Asma</th>
+                    <th>Doença Cardíaca</th>
+                    <th>Doença Pulmonar</th>
+                    <th>Doença Renal</th>
+                    <th>Câncer</th>
+                    <th>Depressão</th>
+                    <th>Nenhuma Condição</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cond in data['condicoes'] %}
+                <tr>
+                    <td>{{ cond[0] }}</td>
+                    <td>{{ cond[1] }}</td>
+                    <td>{{ cond[2] }}</td>
+                    <td>{{ cond[3] }}</td>
+                    <td>{{ cond[4] }}</td>
+                    <td>{{ cond[5] }}</td>
+                    <td>{{ cond[6] }}</td>
+                    <td>{{ cond[7] }}</td>
+                    <td>{{ cond[8] }}</td>
+                    <td>{{ cond[9] }}</td>
+                    <td>{{ cond[10] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Repita o mesmo padrão para as outras tabelas -->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
